@@ -33,6 +33,13 @@ public class Movement : MonoBehaviour
         }
         movementVector.Normalize();
         body.MovePosition((Vector2)transform.position + movementVector * speed);
-        Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+
+        Camera.main.transform.position = new Vector3(transform.position.x, Camera.main.transform.position.y, Camera.main.transform.position.z);
+        if(transform.position.y >= Camera.main.transform.position.y)
+        {
+            Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
+        }
+
+        transform.rotation = Quaternion.FromToRotation(transform.up, movementVector) * transform.rotation;
     }
 }
