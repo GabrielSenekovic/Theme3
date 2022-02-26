@@ -40,6 +40,13 @@ public class Movement : MonoBehaviour
             Camera.main.transform.position = new Vector3(transform.position.x, transform.position.y, Camera.main.transform.position.z);
         }
 
-        transform.rotation = Quaternion.FromToRotation(transform.up, movementVector) * transform.rotation;
+        Quaternion target = Quaternion.FromToRotation(transform.up, movementVector) * transform.rotation;
+        float turnSpeed = 0.1f;
+        target = new Quaternion(Mathf.Lerp(transform.rotation.x, target.x, turnSpeed),
+                                Mathf.Lerp(transform.rotation.y, target.y, turnSpeed),
+                                Mathf.Lerp(transform.rotation.z, target.z, turnSpeed),
+                                Mathf.Lerp(transform.rotation.w, target.w, turnSpeed));
+
+        transform.rotation = target;
     }
 }
