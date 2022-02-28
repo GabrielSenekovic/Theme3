@@ -7,9 +7,11 @@ public class Movement : MonoBehaviour
 {
     Rigidbody2D body;
     [SerializeField] float speed;
+    float maxSpeed;
 
     private void Start() 
     {
+        maxSpeed = speed;
         body = GetComponent<Rigidbody2D>();
     }
     private void Update() 
@@ -52,5 +54,19 @@ public class Movement : MonoBehaviour
                                 Mathf.Lerp(transform.rotation.w, target.w, turnSpeed));*/
 
         transform.rotation = target;
+    }
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("Puddle"))
+        {
+            speed *= 0.5f;
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("Puddle"))
+        {
+            speed = maxSpeed;
+        }
     }
 }
