@@ -41,11 +41,15 @@ public class Movement : MonoBehaviour
         }
 
         Quaternion target = Quaternion.FromToRotation(transform.up, movementVector) * transform.rotation;
-        float turnSpeed = 0.1f;
-        target = new Quaternion(Mathf.Lerp(transform.rotation.x, target.x, turnSpeed),
-                                Mathf.Lerp(transform.rotation.y, target.y, turnSpeed),
+        float turnSpeed = 0.2f;
+        target = new Quaternion(0,
+                                0,
                                 Mathf.Lerp(transform.rotation.z, target.z, turnSpeed),
                                 Mathf.Lerp(transform.rotation.w, target.w, turnSpeed));
+        /*target = new Quaternion(Mathf.Lerp(transform.rotation.x, target.x, turnSpeed),
+                                Mathf.Lerp(transform.rotation.y, target.y, turnSpeed),
+                                Mathf.Lerp(transform.rotation.z, target.z, turnSpeed),
+                                Mathf.Lerp(transform.rotation.w, target.w, turnSpeed));*/
 
         transform.rotation = target;
     }
