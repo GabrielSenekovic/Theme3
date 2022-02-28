@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3961029782668621101}
   - component: {fileID: 7918091512846888021}
   - component: {fileID: 537979133655488821}
-  - component: {fileID: 1059288465785813048}
+  - component: {fileID: 361294149994958007}
   m_Layer: 0
   m_Name: bush2
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 17569ce2bed0100498f10ebc3b2be107, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.5799984, g: 0.7924528, b: 0.5711641, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -98,19 +98,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   keepUpdating: 0
   renderer: {fileID: 7918091512846888021}
---- !u!58 &1059288465785813048
-CircleCollider2D:
+--- !u!65 &361294149994958007
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6943185625849474066}
-  m_Enabled: 1
-  m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.95, y: 0}
+  m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 2.26
+  m_Size: {x: 4.054861, y: 1.2294331, z: 0.2}
+  m_Center: {x: 0.6055441, y: -1.6147814, z: 0}
